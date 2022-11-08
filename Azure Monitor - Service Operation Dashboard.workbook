@@ -121,6 +121,43 @@
               "groupType": "editable",
               "items": [
                 {
+                  "type": 9,
+                  "content": {
+                    "version": "KqlParameterItem/1.0",
+                    "parameters": [
+                      {
+                        "id": "455c577e-015f-4265-97d4-4ee6b5ab952e",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "Subscription",
+                        "type": 6,
+                        "isRequired": true,
+                        "multiSelect": true,
+                        "quote": "'",
+                        "delimiter": ",",
+                        "typeSettings": {
+                          "additionalResourceOptions": [
+                            "value::1",
+                            "value::3",
+                            "value::all"
+                          ],
+                          "includeAll": false
+                        },
+                        "timeContext": {
+                          "durationMs": 86400000
+                        },
+                        "defaultValue": "value::all",
+                        "value": [
+                          "/subscriptions/b661db5b-6c7e-435f-a989-6de3b26c40d3"
+                        ]
+                      }
+                    ],
+                    "style": "pills",
+                    "queryType": 0,
+                    "resourceType": "microsoft.operationalinsights/workspaces"
+                  },
+                  "name": "parameters - 5"
+                },
+                {
                   "type": 12,
                   "content": {
                     "version": "NotebookGroup/1.0",
@@ -151,7 +188,7 @@
                           "queryType": 1,
                           "resourceType": "microsoft.resourcegraph/resources",
                           "crossComponentResources": [
-                            "value::all"
+                            "{Subscription}"
                           ],
                           "visualization": "tiles",
                           "tileSettings": {
@@ -185,7 +222,7 @@
                           "queryType": 1,
                           "resourceType": "microsoft.resourcegraph/resources",
                           "crossComponentResources": [
-                            "value::all"
+                            "{Subscription}"
                           ],
                           "visualization": "tiles",
                           "tileSettings": {
@@ -219,7 +256,7 @@
                           "queryType": 1,
                           "resourceType": "microsoft.resourcegraph/resources",
                           "crossComponentResources": [
-                            "value::all"
+                            "{Subscription}"
                           ],
                           "visualization": "tiles",
                           "tileSettings": {
@@ -258,7 +295,7 @@
                     "queryType": 1,
                     "resourceType": "microsoft.resourcegraph/resources",
                     "crossComponentResources": [
-                      "value::all"
+                      "{Subscription}"
                     ],
                     "visualization": "tiles",
                     "tileSettings": {
@@ -326,11 +363,11 @@
                     "version": "KqlItem/1.0",
                     "query": "ResourceContainers  | where type =~ 'Microsoft.Resources/subscriptions' | project SubscriptionName = name, subscriptionId | join (Resources| summarize resourceCount=count() by subscriptionId) on subscriptionId",
                     "size": 4,
-                    "title": "Subscription Wise Reosurce Count",
+                    "title": "Top 5 Subscriptions with Highest Resource Count",
                     "queryType": 1,
                     "resourceType": "microsoft.resourcegraph/resources",
                     "crossComponentResources": [
-                      "value::all"
+                      "{Subscription}"
                     ],
                     "visualization": "piechart",
                     "sortBy": [],
@@ -404,7 +441,7 @@
                           "queryType": 1,
                           "resourceType": "microsoft.resourcegraph/resources",
                           "crossComponentResources": [
-                            "value::all"
+                            "{Subscription}"
                           ],
                           "visualization": "map",
                           "tileSettings": {
@@ -496,6 +533,44 @@
               "groupType": "editable",
               "items": [
                 {
+                  "type": 9,
+                  "content": {
+                    "version": "KqlParameterItem/1.0",
+                    "parameters": [
+                      {
+                        "id": "455c577e-015f-4265-97d4-4ee6b5ab952e",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "Subscription",
+                        "type": 6,
+                        "isRequired": true,
+                        "multiSelect": true,
+                        "quote": "'",
+                        "delimiter": ",",
+                        "typeSettings": {
+                          "additionalResourceOptions": [
+                            "value::1",
+                            "value::3",
+                            "value::all"
+                          ],
+                          "includeAll": false
+                        },
+                        "timeContext": {
+                          "durationMs": 86400000
+                        },
+                        "defaultValue": "value::all",
+                        "value": [
+                          "/subscriptions/b661db5b-6c7e-435f-a989-6de3b26c40d3",
+                          "/subscriptions/b17d03eb-4598-4cc2-9046-83a94e7c56ee"
+                        ]
+                      }
+                    ],
+                    "style": "pills",
+                    "queryType": 0,
+                    "resourceType": "microsoft.operationalinsights/workspaces"
+                  },
+                  "name": "parameters - 5"
+                },
+                {
                   "type": 12,
                   "content": {
                     "version": "NotebookGroup/1.0",
@@ -526,7 +601,7 @@
                           "queryType": 1,
                           "resourceType": "microsoft.resourcegraph/resources",
                           "crossComponentResources": [
-                            "value::all"
+                            "{Subscription}"
                           ],
                           "visualization": "tiles",
                           "tileSettings": {
@@ -560,7 +635,7 @@
                           "queryType": 1,
                           "resourceType": "microsoft.resourcegraph/resources",
                           "crossComponentResources": [
-                            "value::all"
+                            "{Subscription}"
                           ],
                           "visualization": "tiles",
                           "tileSettings": {
@@ -594,7 +669,7 @@
                           "queryType": 1,
                           "resourceType": "microsoft.resourcegraph/resources",
                           "crossComponentResources": [
-                            "value::all"
+                            "{Subscription}"
                           ],
                           "visualization": "tiles",
                           "tileSettings": {
@@ -633,7 +708,7 @@
                     "queryType": 1,
                     "resourceType": "microsoft.resourcegraph/resources",
                     "crossComponentResources": [
-                      "value::all"
+                      "{Subscription}"
                     ],
                     "visualization": "tiles",
                     "tileSettings": {
@@ -705,7 +780,7 @@
                     "queryType": 1,
                     "resourceType": "microsoft.resourcegraph/resources",
                     "crossComponentResources": [
-                      "value::all"
+                      "{Subscription}"
                     ],
                     "visualization": "piechart",
                     "sortBy": [],
@@ -779,7 +854,7 @@
                           "queryType": 1,
                           "resourceType": "microsoft.resourcegraph/resources",
                           "crossComponentResources": [
-                            "value::all"
+                            "{Subscription}"
                           ],
                           "visualization": "map",
                           "tileSettings": {
@@ -862,7 +937,7 @@
               "comparison": "isEqualTo",
               "value": ""
             },
-            "name": "Home - Without Tab"
+            "name": "Home Without Tab"
           },
           {
             "type": 12,
@@ -891,14 +966,6 @@
                         "linkTarget": "parameter",
                         "linkLabel": "Status",
                         "subTarget": "status",
-                        "style": "link"
-                      },
-                      {
-                        "id": "d2568e3f-dddc-47d7-8bb1-afcbc94c0f97",
-                        "cellValue": "submenu",
-                        "linkTarget": "parameter",
-                        "linkLabel": "Availability",
-                        "subTarget": "availability",
                         "style": "link"
                       },
                       {
@@ -971,7 +1038,10 @@
                         "timeContext": {
                           "durationMs": 86400000
                         },
-                        "defaultValue": "value::3"
+                        "defaultValue": "value::3",
+                        "value": [
+                          "value::all"
+                        ]
                       },
                       {
                         "id": "07837e25-86c0-4013-aea6-a4b49b7bd958",
@@ -1061,6 +1131,90 @@
                           }
                         },
                         "name": "query - 4"
+                      },
+                      {
+                        "type": 3,
+                        "content": {
+                          "version": "KqlItem/1.0",
+                          "query": "\r\nResources\r\n| where type =~ 'microsoft.compute/virtualMachines' | summarize count() by subscriptionId\r\n\r\n",
+                          "size": 3,
+                          "title": "Subscription Wise VM Count",
+                          "queryType": 1,
+                          "resourceType": "microsoft.resourcegraph/resources",
+                          "crossComponentResources": [
+                            "{Subscription}"
+                          ],
+                          "visualization": "tiles",
+                          "gridSettings": {
+                            "formatters": [
+                              {
+                                "columnMatch": "subscriptionId",
+                                "formatter": 13,
+                                "formatOptions": {
+                                  "linkTarget": null,
+                                  "showIcon": true
+                                }
+                              }
+                            ],
+                            "labelSettings": [
+                              {
+                                "columnId": "subscriptionId",
+                                "label": "Subscription"
+                              },
+                              {
+                                "columnId": "count_",
+                                "label": "VM Count"
+                              }
+                            ]
+                          },
+                          "sortBy": [],
+                          "tileSettings": {
+                            "titleContent": {
+                              "columnMatch": "subscriptionId",
+                              "formatter": 15,
+                              "formatOptions": {
+                                "linkTarget": null,
+                                "showIcon": false
+                              }
+                            },
+                            "leftContent": {
+                              "columnMatch": "count_",
+                              "formatter": 12,
+                              "formatOptions": {
+                                "palette": "auto"
+                              },
+                              "numberFormat": {
+                                "unit": 17,
+                                "options": {
+                                  "style": "decimal",
+                                  "maximumFractionDigits": 2,
+                                  "maximumSignificantDigits": 3
+                                }
+                              }
+                            },
+                            "showBorder": true,
+                            "size": "auto"
+                          },
+                          "graphSettings": {
+                            "type": 0,
+                            "topContent": {
+                              "columnMatch": "SubscriptionName",
+                              "formatter": 1
+                            },
+                            "centerContent": {
+                              "columnMatch": "resourceCount",
+                              "formatter": 1,
+                              "numberFormat": {
+                                "unit": 17,
+                                "options": {
+                                  "maximumSignificantDigits": 3,
+                                  "maximumFractionDigits": 2
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "name": "Subscription"
                       },
                       {
                         "type": 3,
@@ -1496,97 +1650,6 @@
                     "value": "status"
                   },
                   "name": "Compute Status"
-                },
-                {
-                  "type": 12,
-                  "content": {
-                    "version": "NotebookGroup/1.0",
-                    "groupType": "editable",
-                    "items": [
-                      {
-                        "type": 3,
-                        "content": {
-                          "version": "KqlItem/1.0",
-                          "query": "// Availability rate \r\n// Calculate the availability rate of each connected computer. \r\nHeartbeat\r\n// bin_at is used to set the time grain to 1 hour, starting exactly 24 hours ago\r\n| summarize heartbeatPerHour = count() by bin_at(TimeGenerated, 1h, ago(24h)), Computer\r\n| extend availablePerHour = iff(heartbeatPerHour > 0, true, false)\r\n| summarize totalAvailableHours = countif(availablePerHour == true) by Computer\r\n| extend availabilityRate = totalAvailableHours*100.0/24",
-                          "size": 3,
-                          "title": "VM Availability Last 24 Hours",
-                          "timeContext": {
-                            "durationMs": 86400000
-                          },
-                          "queryType": 0,
-                          "resourceType": "microsoft.resources/subscriptions",
-                          "crossComponentResources": [
-                            "{Subscription}"
-                          ],
-                          "visualization": "tiles",
-                          "gridSettings": {
-                            "formatters": [
-                              {
-                                "columnMatch": "availabilityRate",
-                                "formatter": 8,
-                                "formatOptions": {
-                                  "min": 0,
-                                  "max": 100,
-                                  "palette": "redGreen"
-                                }
-                              }
-                            ],
-                            "labelSettings": [
-                              {
-                                "columnId": "Computer",
-                                "label": "VM Name"
-                              },
-                              {
-                                "columnId": "totalAvailableHours",
-                                "label": "Available Hours"
-                              },
-                              {
-                                "columnId": "availabilityRate",
-                                "label": "% Availability"
-                              }
-                            ]
-                          },
-                          "tileSettings": {
-                            "titleContent": {
-                              "columnMatch": "Computer",
-                              "formatter": 1
-                            },
-                            "leftContent": {
-                              "columnMatch": "availabilityRate",
-                              "formatter": 12,
-                              "formatOptions": {
-                                "min": 0,
-                                "max": 100,
-                                "palette": "redGreen"
-                              },
-                              "numberFormat": {
-                                "unit": 1,
-                                "options": {
-                                  "style": "decimal",
-                                  "maximumFractionDigits": 2,
-                                  "maximumSignificantDigits": 3
-                                }
-                              }
-                            },
-                            "showBorder": true
-                          }
-                        },
-                        "name": "VM Availibility",
-                        "styleSettings": {
-                          "margin": "50"
-                        }
-                      }
-                    ]
-                  },
-                  "conditionalVisibility": {
-                    "parameterName": "submenu",
-                    "comparison": "isEqualTo",
-                    "value": "availability"
-                  },
-                  "name": "Availability",
-                  "styleSettings": {
-                    "margin": "25"
-                  }
                 },
                 {
                   "type": 12,
@@ -14065,9 +14128,6 @@
                               "crossComponentResources": [
                                 "{Workspaces}"
                               ],
-                              "value": [
-                                "value::all"
-                              ],
                               "typeSettings": {
                                 "additionalResourceOptions": [
                                   "value::all"
@@ -16745,7 +16805,7 @@
                               },
                               {
                                 "columnId": "HealthCheck",
-                                "label": "Helath Check"
+                                "label": "Health Check"
                               },
                               {
                                 "columnId": "LastBackup",
@@ -17220,7 +17280,10 @@
                                     "timeContext": {
                                       "durationMs": 86400000
                                     },
-                                    "defaultValue": "value::3"
+                                    "defaultValue": "value::3",
+                                    "value": [
+                                      "value::all"
+                                    ]
                                   },
                                   {
                                     "id": "d32f4df4-51d9-4816-b3d2-a23e18ab65db",
@@ -17395,7 +17458,7 @@
                                       "palette": "auto"
                                     }
                                   },
-                                  "showBorder": true,
+                                  "showBorder": false,
                                   "size": "auto"
                                 },
                                 "textSettings": {
@@ -17409,7 +17472,7 @@
                               "type": 3,
                               "content": {
                                 "version": "KqlItem/1.0",
-                                "query": "recoveryservicesresources\r\n| where type == \"microsoft.recoveryservices/vaults/backuppolicies\"\r\n| where properties.backupManagementType == \"AzureIaasVM\"\r\n| extend vaultId = tolower(replace(\"\\\\/backupPolicies.*\",\"\",id))\r\n| extend PolicyId = tolower(id)\r\n| join kind = leftouter\r\n(\r\n    recoveryservicesresources\r\n    | where type == \"microsoft.recoveryservices/vaults/backupfabrics/protectioncontainers/protecteditems\"\r\n\t| where properties.backupManagementType == \"AzureIaasVM\"\r\n    | summarize ProtectedItems = count() by PolicyId = tolower(tostring(properties.policyId))\r\n) on PolicyId\r\n| project id,\r\n          PolicyName = replace(\".*\\\\/backupPolicies\\\\/\",\"\",id),\r\n\t\t  vaultId,\r\n\t\t  VaultName = replace(\".*\\\\/vaults\\\\/\",\"\",vaultId),\r\n\t\t  ProtectedItems,\r\n          RunTime = strcat(tostring(properties.schedulePolicy.scheduleRunTimes[0]),\" \",iff(isempty(tostring(properties.timeZone)),\"UTC\",tostring(properties.timeZone))),\r\n          Frequency = tostring(properties.schedulePolicy.scheduleRunFrequency),\r\n          RunDays = tostring(properties.schedulePolicy.scheduleRunDays),\r\n \t      SnapshotRetention = iff(isempty(tostring(properties.instantRpRetentionRangeInDays)),\"2\",tostring(properties.instantRpRetentionRangeInDays)),\r\n          DailyRetention = tostring(properties.retentionPolicy.dailySchedule.retentionDuration.['count']),\r\n          WeeklyRetention = tostring(properties.retentionPolicy.weeklySchedule.retentionDuration.['count']),\r\n          MonthlyRetention = tostring(properties.retentionPolicy.monthlySchedule.retentionDuration.['count']),\r\n          YearlyRetention = tostring(properties.retentionPolicy.yearlySchedule.retentionDuration.['count']),\r\n\t\t  Daily = \"Daily\", Weekly = \"Weekly\", Monthly = \"Monthly\", Yearly = \"Yearly\"\r\n| where strcat(VaultName,\";\",PolicyName) contains (@\"{PolicyName}\")\r\n| where (isnull(ProtectedItems) and \"{HasProtectedItems}\" == \"No\") or (isnotnull(ProtectedItems) and \"{HasProtectedItems}\" == \"Yes\") or (strcat(tostring(ProtectedItems),\"{HasProtectedItems}\") contains \"All\") \r\n| where Frequency == \"{ScheduleFrequency}\" or strcat(Frequency,\"{ScheduleFrequency}\") contains \"All\"\r\n| where {RetentionSchedule}\r\n| where SnapshotRetention == \"{SnapshotRetention}\" or strcat(SnapshotRetention,\"{SnapshotRetention}\") contains \"All\" or (isempty(SnapshotRetention) and strcat(SnapshotRetention,\"{SnapshotRetention}\") contains \"0\")\r\n| project id, PolicyName, vaultId, ProtectedItems, RunTime, BackupFrequency = Frequency, RunDays, SnapshotRetention,\r\n          DailyRetention = iff(isnotempty(DailyRetention),strcat(DailyRetention,\" days \"),DailyRetention),\r\n\t\t  WeeklyRetention = iff(isnotempty(WeeklyRetention),strcat(WeeklyRetention,\" weeks \"),WeeklyRetention),\r\n\t\t  MonthlyRetention = iff(isnotempty(MonthlyRetention),strcat(MonthlyRetention,\" months \"),MonthlyRetention),\r\n\t\t  YearlyRetention = iff(isnotempty(YearlyRetention),strcat(YearlyRetention,\" years \"),YearlyRetention)\r\n| project id, PolicyName, vaultId, ProtectedItems, SnapshotRetention,\r\n          MaxRetention = iff(isempty(YearlyRetention),iff(isempty(MonthlyRetention),iff(isempty(WeeklyRetention),DailyRetention,WeeklyRetention),MonthlyRetention),YearlyRetention),\r\n\t\t  Retention = strcat(DailyRetention,WeeklyRetention,MonthlyRetention,YearlyRetention), BackupFrequency\r\n| sort by ProtectedItems desc, tolower(PolicyName) asc, id asc\r\n\r\n",
+                                "query": "recoveryservicesresources\r\n| where type == \"microsoft.recoveryservices/vaults/backuppolicies\"\r\n| where properties.backupManagementType == \"AzureIaasVM\"\r\n| extend vaultId = tolower(replace(\"\\\\/backupPolicies.*\",\"\",id))\r\n| extend PolicyId = tolower(id)\r\n| join kind = leftouter\r\n(\r\n    recoveryservicesresources\r\n    | where type == \"microsoft.recoveryservices/vaults/backupfabrics/protectioncontainers/protecteditems\"\r\n\t| where properties.backupManagementType == \"AzureIaasVM\"\r\n    | summarize ProtectedItems = count() by PolicyId = tolower(tostring(properties.policyId))\r\n) on PolicyId\r\n| project id,\r\n          PolicyName = replace(\".*\\\\/backupPolicies\\\\/\",\"\",id),\r\n\t\t  vaultId,\r\n\t\t  VaultName = replace(\".*\\\\/vaults\\\\/\",\"\",vaultId),\r\n\t\t  ProtectedItems,\r\n          RunTime = strcat(tostring(properties.schedulePolicy.scheduleRunTimes[0]),\" \",iff(isempty(tostring(properties.timeZone)),\"UTC\",tostring(properties.timeZone))),\r\n          Frequency = tostring(properties.schedulePolicy.scheduleRunFrequency),\r\n          RunDays = tostring(properties.schedulePolicy.scheduleRunDays),\r\n \t      SnapshotRetention = iff(isempty(tostring(properties.instantRpRetentionRangeInDays)),\"2\",tostring(properties.instantRpRetentionRangeInDays)),\r\n          DailyRetention = tostring(properties.retentionPolicy.dailySchedule.retentionDuration.['count']),\r\n          WeeklyRetention = tostring(properties.retentionPolicy.weeklySchedule.retentionDuration.['count']),\r\n          MonthlyRetention = tostring(properties.retentionPolicy.monthlySchedule.retentionDuration.['count']),\r\n          YearlyRetention = tostring(properties.retentionPolicy.yearlySchedule.retentionDuration.['count']),\r\n\t\t  Daily = \"Daily\", Weekly = \"Weekly\", Monthly = \"Monthly\", Yearly = \"Yearly\"\r\n| where strcat(VaultName,\";\",PolicyName) contains (@\"{PolicyName}\")\r\n| where (isnull(ProtectedItems) and \"{HasProtectedItems}\" == \"No\") or (isnotnull(ProtectedItems) and \"{HasProtectedItems}\" == \"Yes\") or (strcat(tostring(ProtectedItems),\"{HasProtectedItems}\") contains \"All\") \r\n| where Frequency == \"{ScheduleFrequency}\" or strcat(Frequency,\"{ScheduleFrequency}\") contains \"All\"\r\n| where {RetentionSchedule}\r\n| where SnapshotRetention == \"{SnapshotRetention}\" or strcat(SnapshotRetention,\"{SnapshotRetention}\") contains \"All\" or (isempty(SnapshotRetention) and strcat(SnapshotRetention,\"{SnapshotRetention}\") contains \"0\")\r\n| project id, PolicyName, vaultId, ProtectedItems, RunTime, BackupFrequency = Frequency, RunDays, SnapshotRetention,\r\n          DailyRetention = iff(isnotempty(DailyRetention),strcat(DailyRetention,\" days \"),DailyRetention),\r\n\t\t  WeeklyRetention = iff(isnotempty(WeeklyRetention),strcat(WeeklyRetention,\" weeks \"),WeeklyRetention),\r\n\t\t  MonthlyRetention = iff(isnotempty(MonthlyRetention),strcat(MonthlyRetention,\" months \"),MonthlyRetention),\r\n\t\t  YearlyRetention = iff(isnotempty(YearlyRetention),strcat(YearlyRetention,\" years \"),YearlyRetention)\r\n| project id, PolicyName, vaultId, ProtectedItems, SnapshotRetention,\r\n          MaxRetention = iff(isempty(YearlyRetention),iff(isempty(MonthlyRetention),iff(isempty(WeeklyRetention),DailyRetention,WeeklyRetention),MonthlyRetention),YearlyRetention), DailyRetention=DailyRetention,WeeklyRetention = WeeklyRetention,MonthlyRetention=MonthlyRetention,YearlyRetention=YearlyRetention, BackupFrequency\r\n          \r\n| sort by ProtectedItems desc, tolower(PolicyName) asc, id asc\r\n\r\n",
                                 "size": 3,
                                 "showExportToExcel": true,
                                 "queryType": 1,
@@ -17445,8 +17508,20 @@
                                       "label": "Max Retention"
                                     },
                                     {
-                                      "columnId": "Retention",
-                                      "label": "Retention"
+                                      "columnId": "DailyRetention",
+                                      "label": "Daily Retention"
+                                    },
+                                    {
+                                      "columnId": "WeeklyRetention",
+                                      "label": "Weekly Retention"
+                                    },
+                                    {
+                                      "columnId": "MonthlyRetention",
+                                      "label": "Monthly Retention"
+                                    },
+                                    {
+                                      "columnId": "YearlyRetention",
+                                      "label": "Yearly Retention"
                                     },
                                     {
                                       "columnId": "BackupFrequency",
@@ -28448,10 +28523,7 @@
                                 "showDefault": false
                               },
                               "queryType": 1,
-                              "resourceType": "microsoft.resourcegraph/resources",
-                              "value": [
-                                "value::all"
-                              ]
+                              "resourceType": "microsoft.resourcegraph/resources"
                             },
                             {
                               "id": "f60ea0a0-3703-44ca-a59b-df0246423f41",
@@ -29787,7 +29859,7 @@
                               "type": 3,
                               "content": {
                                 "version": "KqlItem/1.0",
-                                "query": "ServiceHealthResources\r\n| where type =~ 'Microsoft.ResourceHealth/events'\r\n| extend eventType = properties.EventType, status = properties.Status, description = properties.Title, trackingId = properties.TrackingId, summary = properties.Summary, priority = properties.Priority, impactStartTime = properties.ImpactStartTime, impactMitigationTime = todatetime(tolong(properties.ImpactMitigationTime))\r\n| where properties.Status == 'Active' and tolong(impactStartTime) > 1 and eventType == 'HealthAdvisory'\r\n| project name , type ,subscriptionId ,eventType,description",
+                                "query": "ServiceHealthResources\r\n| where type =~ 'Microsoft.ResourceHealth/events'\r\n| extend eventType = properties.EventType, status = properties.Status, description = properties.Title, trackingId = properties.TrackingId, summary = properties.Summary, priority = properties.Priority, impactStartTime = properties.ImpactStartTime, impactMitigationTime = todatetime(tolong(properties.ImpactMitigationTime))\r\n| where properties.Status == 'Active' and tolong(impactStartTime) > 1 and eventType == 'HealthAdvisory'\r\n| project name , type ,subscriptionId ,eventType,description,summary",
                                 "size": 3,
                                 "showExportToExcel": true,
                                 "queryType": 1,
@@ -30779,7 +30851,7 @@
                                     "type": 3,
                                     "content": {
                                       "version": "KqlItem/1.0",
-                                      "query": "Resources\r\n| where type has \"microsoft.compute/disks\"\r\n| extend diskState = tostring(properties.diskState)\r\n| where  diskState == 'Unattached' or managedBy == \"\"\r\n| summarize c = count()\r\n| extend Item = \"Orphan Disk\",  Key = 1\r\n",
+                                      "query": "Resources\r\n| where type has \"microsoft.compute/disks\"\r\n| extend diskState = tostring(properties.diskState)\r\n| where  diskState == 'Unattached' and name !has '-ASRReplica' or managedBy == \"\"\r\n| summarize c = count()\r\n| extend Item = \"Orphan Disk\",  Key = 1\r\n",
                                       "size": 3,
                                       "noDataMessageStyle": 5,
                                       "queryType": 1,
@@ -31702,12 +31774,8 @@
                                 "query": "AdvisorResources\r\n| where type == 'microsoft.advisor/recommendations'\r\n| extend\r\n\tresources = tostring(properties.resourceMetadata.resourceId),\r\n\tsavings = todouble(properties.extendedProperties.savingsAmount),\r\n\tsolution = tostring(properties.shortDescription.solution),\r\n\tcurrency = tostring(properties.extendedProperties.savingsCurrency)\r\n| summarize\r\n\tdcount(resources),\r\n\tbin(sum(savings), 0.01)\r\n\tby solution, currency\r\n| project solution, dcount_resources\r\n\r\n| summarize c = count()\r\n| extend Item = \"Distinct Recommendations\",  Key = 1",
                                 "size": 3,
                                 "title": "Distinct Recommendations",
-                                "exportedParameters": [
-                                  {
-                                    "parameterName": "button4",
-                                    "defaultValue": "distinct"
-                                  }
-                                ],
+                                "exportParameterName": "button4",
+                                "exportDefaultValue": "distinct",
                                 "queryType": 1,
                                 "resourceType": "microsoft.resourcegraph/resources",
                                 "crossComponentResources": [
@@ -32129,8 +32197,8 @@
     {
       "type": 1,
       "content": {
-        "json": "Azure Monitor Dashboard (Version 1.0 - August 2022)  -- Designed & Developed by Capgemini Cloud Operation Services",
-        "style": "success"
+        "json": "Azure Service Operation Dashboard (Version 1.0 )  --                               Workbook is Designed, Developed & Managed by Capgemini Cloud Operation Services",
+        "style": "upsell"
       },
       "name": "Footer",
       "styleSettings": {
